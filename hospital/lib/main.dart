@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hospital/views/habitaciones/habitaciones_list_view.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +34,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/habitaciones',
+      routes:  {
+        '/habitaciones': (context) => HabitacionesListView(),
+      },
     );
   }
 }
@@ -101,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           //
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
+          // action in the IDE, or press "p" in the console) to see the
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
