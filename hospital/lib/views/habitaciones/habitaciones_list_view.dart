@@ -23,10 +23,13 @@ class HabitacionesListView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Image.network(
-                    'https://hospitecnia.com/sites/default/files/inline-images/imagen-05_0.jpg', // URL de ejemplo
-                    fit: BoxFit.cover,
-                    height: 200,
+                  ClipRRect(
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(4.0)),
+                    child: Image.network(
+                      'https://hospitecnia.com/sites/default/files/inline-images/imagen-05_0.jpg', // URL de ejemplo
+                      fit: BoxFit.cover,
+                      height: 200,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -34,26 +37,54 @@ class HabitacionesListView extends StatelessWidget {
                       'Habitación ${index + 1}',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 20, 
-                        fontWeight: FontWeight.bold),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  ButtonBar(
-                    alignment: MainAxisAlignment.center,
+                  Row(
                     children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          // Acción para ver detalle
-                        },
-                        child: Text('Ver Detalle'),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              // Acción para ver detalle
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFF2c9aa9), // Color del botón
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0), // Bordes menos redondeados
+                              ),
+                            ),
+                            child: Text(
+                              'Ver Detalle',
+                              style: TextStyle(color: Colors.white), // Color del texto a blanco
+                            ),
+                          ),
+                        ),
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Acción para editar
-                        },
-                        child: Text('Editar'),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              // Acción para editar
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red[900], // Color rojo oscuro
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0), // Bordes menos redondeados
+                              ),
+                            ),
+                            child: Text(
+                              'Editar',
+                              style: TextStyle(color: Colors.white), // Color del texto a blanco
+                            ),
+                          ),
+                        ),
                       ),
-                    ],
+                  ],
                   ),
                 ],
               ),
@@ -68,6 +99,11 @@ class HabitacionesListView extends StatelessWidget {
             MaterialPageRoute(builder: (context) => HabitacionesFormView()),
           );
         },
+        backgroundColor: Color(0xFF2c9aa9), // Color del FAB
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50.0),
+        ),
         child: Icon(Icons.add),
       ),
     );

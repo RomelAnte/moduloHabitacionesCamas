@@ -25,67 +25,136 @@ class _HabitacionesFormViewState extends State<HabitacionesFormView> {
           key: _formKey,
           child: ListView(
             children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Nombre',
-                  hintText: 'Ingrese el nombre',
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Nombre',
+                    hintText: 'Ingrese el nombre',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFFE1E5E8)),
+                    ),
+                  ),
                 ),
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Ubicación',
-                  hintText: 'Ingrese la ubicación',
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Ubicación',
+                    hintText: 'Ingrese la ubicación',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFFE1E5E8)),
+                    ),
+                  ),
                 ),
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Descripción',
-                  hintText: 'Ingrese la descripción',
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Descripción',
+                    hintText: 'Ingrese la descripción',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFFE1E5E8)),
+                    ),
+                  ),
                 ),
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Número de camas',
-                  hintText: 'Ingrese el número de camas',
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Número de camas',
+                    hintText: 'Ingrese el número de camas',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFFE1E5E8)),
+                    ),
+                  ),
+                  keyboardType: TextInputType.number,
                 ),
-                keyboardType: TextInputType.number,
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Tipo de habitación',
-                  hintText: 'Ingrese el tipo de habitación',
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Tipo de habitación',
+                    hintText: 'Ingrese el tipo de habitación',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFFE1E5E8)),
+                    ),
+                  ),
                 ),
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Recursos asociados',
-                  hintText: 'Ingrese los recursos asociados',
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Recursos asociados',
+                    hintText: 'Ingrese los recursos asociados',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFFE1E5E8)),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Acción para subir imagen
-                },
-                child: Text('Subir Imagen'),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    // Acción para subir imagen
+                  },
+                  icon: Icon(Icons.upload_file, color: Colors.white),
+                  label: Text('Subir Imagen', style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF2c9aa9), // Color del botón
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0), // Bordes menos redondeados
+                    ),
+                  ),
+                ),
               ),
               SizedBox(height: 20),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        // Acción para guardar
-                      }
-                    },
-                    child: Text('Guardar'),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            // Acción para guardar
+                          }
+                        },
+                        icon: Icon(Icons.save, color: Colors.white),
+                        label: Text('Guardar', style: TextStyle(color: Colors.white)),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFF2c9aa9), // Color del botón
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0), // Bordes menos redondeados
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Acción para cancelar
-                    },
-                    child: Text('Cancelar'),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          // Acción para cancelar
+                        },
+                        icon: Icon(Icons.cancel, color: Colors.white),
+                        label: Text('Cancelar', style: TextStyle(color: Colors.white)),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red[900], // Color rojo oscuro
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0), // Bordes menos redondeados
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
